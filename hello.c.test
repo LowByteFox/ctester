@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-%%
+                  %%
 
 test abc {
     printf("I am test %s\n", __FUNCTION__);
