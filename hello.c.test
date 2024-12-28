@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+%%
+
+test abc {
+    printf("I am test %s\n", __FUNCTION__);
+    return 0;
+}
+
+test abc2 {
+    printf("I am test %s\n", __FUNCTION__);
+    return 0;
+}
+
+test abc {
+    printf("I am test %s\n", __FUNCTION__);
+    return 0;
+}
+
+test abc2 {
+    printf("I am test %s\n", __FUNCTION__);
+    return 0;
+}
+
+test abc {
+    printf("I am test %s\n", __FUNCTION__);
+    return 0;
+}
+
+test abc2 {
+    printf("I am test %s\n", __FUNCTION__);
+    return 0;
+}
+
+test abc {
+    printf("I am test %s\n", __FUNCTION__);
+    return 0;
+}
+
+test abc2 {
+    printf("I am test %s\n", __FUNCTION__);
+    return 0;
+}
+
+
+
+%%

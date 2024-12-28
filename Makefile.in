@@ -1,4 +1,4 @@
-OBJS = main.o program.o err.o
+OBJS = main.o program.o err.o str.o
 APP = ctester
 
 all: Makefile $(APP)
