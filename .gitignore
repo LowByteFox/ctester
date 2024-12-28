@@ -1,0 +1,3 @@
+ctester
+*.o
+Makefile

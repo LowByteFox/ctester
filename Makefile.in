@@ -1,0 +1,20 @@
+OBJS = main.o program.o err.o
+APP = ctester
+
+all: Makefile $(APP)
+
+Makefile: Makefile.in
+	@echo "Makefile.in changed, re-configuring"
+	CC=$(CC) CFLAGS="$(CFLAGS)" ./configure
+
+$(APP): $(OBJS)
+	$(CC) -o $@ $(OBJS)
+
+.c.o:
+	$(CC) -c $(CFLAGS) $< -o $@
+
+clean:
+	rm -f $(APP) $(OBJS)
+
+.PHONY: all clean
+.SUFFIXES: .c

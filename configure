@@ -1,0 +1,25 @@
+#!/bin/sh
+
+CC="${CC:-cc}"
+CFLAGS="${CFLAGS:--g -O2}"
+
+if [ -n "$1" ]; then
+    if [ "$1" = "-h" -o "$1" = "--help" ]; then
+        echo "usage: $0 [-h | --help]
+
+env:
+    CC      sets C compiler       [$CC]
+    CFLAGS  sets C compiler flags [$CFLAGS]"
+        exit 1
+    fi
+fi
+
+echo "CC = $CC
+CFLAGS = $CFLAGS" > Makefile
+
+if [ -f Makefile.in ]; then
+    cat Makefile.in >> Makefile
+else
+    echo "$0: Makefile.in not found!" >&2
+    exit 1
+fi
