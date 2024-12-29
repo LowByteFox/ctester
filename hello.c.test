@@ -1,47 +1,26 @@
 #include <stdio.h>
 
-                  %%
+%%
+%nomain
 
-test abc {
+%test abc {
     printf("I am test %s\n", __FUNCTION__);
     return 0;
 }
 
-test abc2 {
+%test abc2 {
     printf("I am test %s\n", __FUNCTION__);
     return 0;
 }
 
-test abc {
-    printf("I am test %s\n", __FUNCTION__);
-    return 0;
+%fail I_am_failure {
+    return 1;
 }
-
-test abc2 {
-    printf("I am test %s\n", __FUNCTION__);
-    return 0;
-}
-
-test abc {
-    printf("I am test %s\n", __FUNCTION__);
-    return 0;
-}
-
-test abc2 {
-    printf("I am test %s\n", __FUNCTION__);
-    return 0;
-}
-
-test abc {
-    printf("I am test %s\n", __FUNCTION__);
-    return 0;
-}
-
-test abc2 {
-    printf("I am test %s\n", __FUNCTION__);
-    return 0;
-}
-
-
 
 %%
+
+int main()
+{
+    ctester_main();
+    return 0;
+}

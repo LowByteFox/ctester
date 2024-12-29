@@ -1,20 +1,27 @@
 OBJS = main.o program.o err.o str.o
+HEXS = rt/header.hex rt/footer.hex
 APP = ctester
 
-all: Makefile $(APP)
+all: Makefile rt/to_hex $(APP)
 
 Makefile: Makefile.in
 	@echo "Makefile.in changed, re-configuring"
 	CC=$(CC) CFLAGS="$(CFLAGS)" ./configure
 
-$(APP): $(OBJS)
-	$(CC) -o $@ $(OBJS)
+$(APP): $(HEXS) $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS)
+
+rt/to_hex:
+	$(CC) $(CFLAGS) rt/to_hex_arr.c -o $@
 
 .c.o:
 	$(CC) -c $(CFLAGS) $< -o $@
 
+.c.hex:
+	./rt/to_hex $< > $@
+
 clean:
-	rm -f $(APP) $(OBJS)
+	rm -f $(APP) $(OBJS) rt/to_hex $(HEXS)
 
 .PHONY: all clean
-.SUFFIXES: .c
+.SUFFIXES: .c .hex

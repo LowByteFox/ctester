@@ -1,3 +1,5 @@
 ctester
+rt/to_hex
 *.o
+*.hex
 Makefile
