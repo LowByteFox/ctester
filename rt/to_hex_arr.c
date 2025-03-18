@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(int argc, char **argv) {
-    if (argc != 3)
+    if (argc == 1)
         return 1;
 
     FILE *f = fopen(argv[1], "r");
@@ -13,8 +13,7 @@ int main(int argc, char **argv) {
     while ((c = fgetc(f)) != EOF) {
         printf("0x%x, ", c);
     }
-
-    printf("0x0 }%s\n", argv[2]);
+    printf("0x0 };\n");
 
     fclose(f);
     return 0;
