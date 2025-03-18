@@ -20,7 +20,7 @@ rt/to_hex:
 	$(CC) -c $(CFLAGS) $< -o $@
 
 .c.hex:
-	./rt/to_hex $< > $@
+	./rt/to_hex $< ";" > $@
 
 clean:
 	rm -f $(APP) $(OBJS) rt/to_hex $(HEXS)
