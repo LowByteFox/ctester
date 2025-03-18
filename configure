@@ -15,7 +15,7 @@ env:
 fi
 
 echo "CC = $CC
-CFLAGS = $CFLAGS" > Makefile
+CFLAGS = $CFLAGS -Iinclude" > Makefile
 
 if [ -f Makefile.in ]; then
     cat Makefile.in >> Makefile

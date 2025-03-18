@@ -310,7 +310,7 @@ void usage()
 }
 
 const char header[] =
-#include "rt/header.hex"
+#include "../rt/header.hex"
 
 const char footer[] = 
-#include "rt/footer.hex"
+#include "../rt/footer.hex"

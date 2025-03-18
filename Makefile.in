@@ -1,4 +1,4 @@
-OBJS = main.o program.o err.o str.o
+OBJS = src/main.o src/program.o src/err.o src/str.o
 HEXS = rt/header.hex rt/footer.hex
 APP = ctester
 
